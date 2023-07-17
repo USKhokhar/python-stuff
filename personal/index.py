@@ -1,19 +1,20 @@
-# LINEAR SEARCH
+def binary_search(arr, target, high, low):
+    while low <= high:
+        mid = (low+high)//2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] > target:
+            high = mid -1
+        else: 
+            low = mid + 1
+    return -1
 
-def linear_search(arr, target):
-    for index, item in enumerate(arr):
-        if item == target:
-            return index
-    return 1
+listx = [1,2,3,4,5,6]
+my_target = int(input("Enter element to be found: "))
 
-listx = [1,2,3,4,5,6,7]
-my_target = int(input("Enter the number to be found: "))
+flag = binary_search(listx, my_target, len(listx)-1, 0)
 
-flag = linear_search(listx, my_target)
-
-if flag != 1:
+if flag != -1:
     print(f"{my_target} found at index {flag}")
-elif flag == 1:
-    print(f"{my_target} not present in list!")
 else:
-    print(f"Some error occured!")
+    print("Not found!")
