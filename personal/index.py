@@ -1,11 +1,19 @@
-def tower_hanoi(number, src, des, aux):
-    if number == 1:
-        print(f"Move disk 1 from {src} to {des}")
-        return
-    tower_hanoi(number-1, src, aux, des)
-    print(f"Move disk {number} from {src} to {des}")
-    tower_hanoi(number-1, aux, des, src)
+# LINEAR SEARCH
 
+def linear_search(arr, target):
+    for index, item in enumerate(arr):
+        if item == target:
+            return index
+    return 1
 
-number = 6
-tower_hanoi(number, 'A', 'B', 'C')
+listx = [1,2,3,4,5,6,7]
+my_target = int(input("Enter the number to be found: "))
+
+flag = linear_search(listx, my_target)
+
+if flag != 1:
+    print(f"{my_target} found at index {flag}")
+elif flag == 1:
+    print(f"{my_target} not present in list!")
+else:
+    print(f"Some error occured!")
