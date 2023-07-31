@@ -1,5 +1,6 @@
-# File I/O --> Read (Sorted/Alphabetically)
+# File I/O --> Read CSV
 
-with open("personal/file.txt") as names:
-    for name in sorted(names, reverse=True):
-        print(name.rstrip())
+with open("personal/file.csv") as file:
+    for person in file:
+        name, relation = person.rstrip().split(",")
+        print(f"{name} is the {relation}")
