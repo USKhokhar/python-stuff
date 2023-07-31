@@ -1,15 +1,10 @@
-def main():
-    while True:
-        try:
-            steps = int(input("Number of steps: "))
-            pyramid(steps)
-            break
-        except ValueError:
-            print("Enter an integer please")
-
-
-def pyramid(steps):
-    for i in range(1, steps):
-        print(" * " * i)
-
-main()
+# File I/O --> Write
+print("Enter 0000 to stop prompts")
+while True:
+    prompt = input("Enter Text: ")
+    
+    if prompt == "0000":
+        break
+    else:
+        with open("personal/file.txt", "a") as file:
+            file.write(f"{prompt} \n")
