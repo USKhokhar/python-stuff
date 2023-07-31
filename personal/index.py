@@ -1,7 +1,15 @@
-while True:
-    try:
-        prompt = int(input("Enter: "))
-        print(prompt)
-        break
-    except ValueError:
-        pass
+def main():
+    while True:
+        try:
+            steps = int(input("Number of steps: "))
+            pyramid(steps)
+            break
+        except ValueError:
+            print("Enter an integer please")
+
+
+def pyramid(steps):
+    for i in range(1, steps):
+        print(" * " * i)
+
+main()
