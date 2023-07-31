@@ -1,21 +1,18 @@
-class Details:
-    def __init__(self, name, relation):
+class GriffinTester():
+    def __init__(self, name):
+        if name not in ["peter", "louis", "meg", "chris", "brian", "stewie"]:
+            raise ValueError("Not A Griffin!")
         self.name = name
-        self.relation = relation
+    def __str__(self):
+        return "Griffin Spotted!"
 
 def main():
-    details = getDetails()
-    print(f"{details.name} is the {details.relation}")
+    griffin = getGriffin()
+    print(griffin)
 
-def getDetails():
+def getGriffin():
     name = input("Enter Name: ")
-    relation = input("Enter Relation: ")
-    return Details(name, relation)
+    return GriffinTester(name)
 
 if __name__ == "__main__":
-    main()
-
-# OUTPUT
-# Enter Name: Peter 
-# Enter Relation: STUD
-# Peter is the STUD
+    main() 
